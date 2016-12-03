@@ -1,0 +1,22 @@
+Xft.dpi: 144
+Xft.rgba: rgb
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcddefault
+
+UXTerm*locale: true
+UXTerm*saveLines: 50000
+
+UXTerm*termName: xterm-256color
+UXTerm*background: grey5
+UXTerm*foreground: white
+
+UXTerm*scrollTtyOutput: false
+UXTerm*scrollKey: true
+UXTerm*alternateScroll: true
+
+UXTerm*renderFont: true
+UXTerm*faceName: Inconsolata:style=Regular
+UXTerm*faceSize: 12

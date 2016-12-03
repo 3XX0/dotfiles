@@ -1,0 +1,27 @@
+[user]
+    email = jbjcalmels@gmail.com
+    name = Jonathan Calmels
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+[merge]
+    tool = vimdiff
+    log = true
+[push]
+    default = upstream
+[alias]
+    lg = log --pretty=oneline -n 20 --graph --abbrev-commit
+    st = status -s
+    di = !git diff | vim -
+    dc = !git diff --cached | vim -
+    pl = pull
+    ps = push
+    pr = !"fn() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; fn"
+    cl = clone --recursive
+    ci = commit -am
+    cp = cherry-pick
+    ca = commit --amend -a --no-edit
+    br = branch
+    mt = mergetool
+    rb = "!fn() { git rebase -i HEAD~$1; }; fn"
+    ck = checkout
