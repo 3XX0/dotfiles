@@ -19,9 +19,10 @@ bindkey -v
 
 alias ll='ls -l --color'
 alias lld='ls -ld --color */'
-alias vims='vim -S'
+alias rsync='rsync -vh --progress'
 
 alias sysupdate='yaourt -Suya --noconfirm'
+alias sysclean='sudo sh -c "pacman -Qtdq | xargs -r pacman --noconfirm -Rns && pacman -Sc"'
 
 grepr() {
     grep -s -n -I -R --color=always -- $1 $@ | sed -e "s/:/ +/"
