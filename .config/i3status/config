@@ -11,15 +11,22 @@ general {
         interval = 5
 }
 
+order += "volume master"
 order += "ipv6"
 order += "disk /"
-order += "run_watch DHCP"
-order += "path_exists VPN"
+#order += "run_watch DHCP"
+order += "ethernet vpn0"
 order += "wireless _first_"
 order += "ethernet _first_"
 order += "battery 0"
 order += "load"
 order += "tztime local"
+
+volume master {
+       format = "VOL: %volume"
+       format_muted = "VOL: muted (%volume)"
+       device = "pulse:0"
+}
 
 wireless _first_ {
         format_up = "W: (%quality at %essid) %ip"
@@ -36,13 +43,17 @@ battery 0 {
         format = "%status %percentage %remaining"
 }
 
-run_watch DHCP {
-        pidfile = "/var/run/dhcpcd-*.pid"
-}
+#run_watch DHCP {
+#        pidfile = "/var/run/dhcpcd-*.pid"
+#}
 
-path_exists VPN {
-        path = "/var/run/vpnc/defaultroute"
+ethernet vpn0 {
+        format_up = "VPN: yes"
+        format_down = "VPN: no"
 }
+#path_exists VPN {
+#        path = "/var/run/vpnc/defaultroute"
+#}
 
 tztime local {
         format = "%Y-%m-%d %H:%M:%S"

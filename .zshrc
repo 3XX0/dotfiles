@@ -33,7 +33,7 @@ replace() {
     }"
 }
 
-export GOPATH=~/dev/go
+export GOPATH=~/devel/go
 export CDPATH=.:~:~/dev
 export PATH=$PATH:$GOPATH/bin
 export EDITOR=vim
@@ -46,3 +46,6 @@ case $TERM in
 	}
     ;;
 esac
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word

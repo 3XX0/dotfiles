@@ -20,3 +20,7 @@ UXTerm*alternateScroll: true
 UXTerm*renderFont: true
 UXTerm*faceName: Inconsolata:style=Regular
 UXTerm*faceSize: 12
+
+UXTerm*VT100.translations: #override \
+    Ctrl <Key> +: larger-vt-font() \n\
+    Ctrl <Key> -: smaller-vt-font()
