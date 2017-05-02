@@ -133,6 +133,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
+Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
 call plug#end()
 
 " GitGlutter
@@ -168,3 +169,10 @@ let g:airline_symbols.readonly = '[RO]'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" Clang auto inspector
+let g:clang_type_inspector#automatic_inspection=0
+augroup clang-inspect-type-mapping
+    autocmd!
+    autocmd FileType cpp nmap <C-i> <Plug>(clang-inspect-type-at-cursor)
+augroup END
