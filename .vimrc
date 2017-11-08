@@ -2,9 +2,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-colorscheme ir_black  " color scheme
-set background=dark   " adapt colors for background
-
 set nocompatible      " use vim defaults
 set encoding=utf-8    " use utf-8
 set ls=2              " always show status line
@@ -107,11 +104,11 @@ au FileType sh      let g:is_bash=1
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 
 " Extra whitespaces
-highlight ExtraWhitespace ctermbg=red
-au ColorScheme * highlight ExtraWhitespace
-au BufEnter    * match     ExtraWhitespace /\s\+$/
-au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/
-au InsertLeave * match     ExtraWhiteSpace /\s\+$/
+"highlight ExtraWhitespace ctermbg=red
+"au ColorScheme * highlight ExtraWhitespace
+"au BufEnter    * match     ExtraWhitespace /\s\+$/
+"au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/
+"au InsertLeave * match     ExtraWhiteSpace /\s\+$/
 
 " Autocompletion menu
 highlight PmenuSel ctermbg=green ctermfg=black
@@ -138,7 +135,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
 Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
+Plug 'nanotech/jellybeans.vim'
 call plug#end()
+
+colorscheme jellybeans " color scheme
+set background=dark    " adapt colors for background
 
 " GitGlutter
 highlight SignColumn ctermbg=none
