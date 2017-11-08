@@ -2,7 +2,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-syntax on             " syntax highlighting
 colorscheme ir_black  " color scheme
 set background=dark   " adapt colors for background
 
@@ -101,6 +100,8 @@ au BufWinEnter * normal zR
 au FileType python  set  autoindent
 au FileType c       setl sw=8 ts=8 sts=4
 au FileType cpp     setl sw=4 ts=4 sts=2
+au FileType sh      let g:sh_fold_enabled=5
+au FileType sh      let g:is_bash=1
 
 " Avoid boost autocompletion
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
@@ -120,6 +121,9 @@ highlight DiffAdd ctermfg=black
 highlight DiffDelete ctermfg=black
 highlight DiffChange ctermfg=black ctermbg=red
 highlight DiffText ctermfg=black ctermbg=yellow
+
+" Syntax highlighting
+syntax on
 
 """"""""""""""""""""""""" PLUGINS SETTINGS """""""""""""""""""""""""""
 
