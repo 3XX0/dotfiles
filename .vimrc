@@ -103,22 +103,6 @@ au FileType sh      let g:is_bash=1
 " Avoid boost autocompletion
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!
 
-" Extra whitespaces
-"highlight ExtraWhitespace ctermbg=red
-"au ColorScheme * highlight ExtraWhitespace
-"au BufEnter    * match     ExtraWhitespace /\s\+$/
-"au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/
-"au InsertLeave * match     ExtraWhiteSpace /\s\+$/
-
-" Autocompletion menu
-highlight PmenuSel ctermbg=green ctermfg=black
-
-" Vimdiff colorscheme
-highlight DiffAdd ctermfg=black
-highlight DiffDelete ctermfg=black
-highlight DiffChange ctermfg=black ctermbg=red
-highlight DiffText ctermfg=black ctermbg=yellow
-
 " Syntax highlighting
 syntax on
 
@@ -136,10 +120,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
 Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
 Plug 'nanotech/jellybeans.vim'
+Plug 'vim-scripts/clibs.vim'
 call plug#end()
 
 colorscheme jellybeans " color scheme
 set background=dark    " adapt colors for background
+
+" Extra whitespaces
+au ColorScheme * highlight ExtraWhitespace
+au BufEnter    * match     ExtraWhitespace /\s\+$/
+au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match     ExtraWhiteSpace /\s\+$/
+highlight ExtraWhitespace ctermbg=red
 
 " GitGlutter
 highlight SignColumn ctermbg=none
@@ -175,9 +167,14 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+" Glibc functions
+let c_hi_identifiers = 'all'
+let c_hi_libs = ['*']
+
 " Clang auto inspector
 let g:clang_type_inspector#automatic_inspection=0
 augroup clang-inspect-type-mapping
     autocmd!
     autocmd FileType cpp nmap <C-i> <Plug>(clang-inspect-type-at-cursor)
 augroup END
+
