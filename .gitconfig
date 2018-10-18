@@ -18,7 +18,7 @@
     ps = push
     pr = !"fn() { git fetch origin pull/$1/head:pr-$1; git checkout pr-$1; }; fn"
     cl = clone --recursive
-    ci = commit -am
+    cm = commit -m
     cp = cherry-pick
     ca = commit --amend -a --no-edit
     br = branch

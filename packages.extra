@@ -1,0 +1,9 @@
+acpid
+cifs-utils
+dkms
+hwloc
+jq
+linux-headers
+pavucontrol-qt
+qemu-headless
+xf86-video-nouveau

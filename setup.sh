@@ -13,10 +13,13 @@ FILES=".ctags \
        .xinitrc \
        .config/i3 \
        .config/i3status \
-       .config/systemd"
+       .config/systemd \
+       .gnupg/gpg.conf \
+       .gnupg/gpg-agent.conf"
 
 for file in $FILES; do
-    ln -vfns "$CWD/$file" "$HOME/$file"
+    mkdir -p $(dirname "$HOME/$file")
+    ln -Tvfns "$CWD/$file" "$HOME/$file"
 done
 
 vim -c ":PlugInstall"

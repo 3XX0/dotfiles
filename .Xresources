@@ -18,7 +18,7 @@ UXTerm*scrollKey: true
 UXTerm*alternateScroll: true
 
 UXTerm*renderFont: true
-UXTerm*faceName: Inconsolata:style=Regular
+UXTerm*faceName: DejaVu Sans Mono
 UXTerm*faceSize: 12
 
 UXTerm*VT100.translations: #override \

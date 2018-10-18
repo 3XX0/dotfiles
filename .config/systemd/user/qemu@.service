@@ -1,0 +1,27 @@
+[Unit]
+Description=QEMU virtual machine
+
+[Service]
+PIDFile=%t/qemu-%i.pid
+ExecStart=/usr/bin/qemu-system-x86_64 \
+          -name qemu-%i \
+          -pidfile %t/qemu-%i.pid \
+          -enable-kvm \
+          -snapshot \
+          -nodefaults \
+          -nodefconfig \
+          -serial mon:unix:%t/qemu-%i.socket,server,nowait \
+          -nographic \
+          -machine q35,accel=kvm,dump-guest-core=off \
+          -cpu host \
+          -smp 4 \
+          -m 8G \
+          -realtime mlock=off \
+          -device pcie-root-port,id=root.0 \
+          -netdev user,id=network0 \
+          -device virtio-net,netdev=network0 \
+          -drive file=%h/qemu/%i.img,cache=none,if=virtio \
+          -drive file=fat:%h/qemu/%i,file.label=cidata,cache=none,if=virtio
+ExecStop=/usr/bin/env kill $MAINPID
+TimeoutStopSec=30
+KillMode=none
