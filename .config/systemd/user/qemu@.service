@@ -13,15 +13,17 @@ ExecStart=/usr/bin/qemu-system-x86_64 \
           -serial mon:unix:%t/qemu-%i.socket,server,nowait \
           -nographic \
           -machine q35,accel=kvm,dump-guest-core=off \
-          -cpu host \
+          -cpu host,kvm=off \
           -smp 4 \
           -m 8G \
           -realtime mlock=off \
-          -device pcie-root-port,id=root.0 \
+          -device pcie-root-port,id=root.0,chassis=0,slot=0 \
           -netdev user,id=network0 \
-          -device virtio-net,netdev=network0 \
-          -drive file=%h/qemu/%i.img,cache=none,if=virtio \
-          -drive file=fat:%h/qemu/%i,file.label=cidata,cache=none,if=virtio
+          -device virtio-net-pci,romfile=,netdev=network0 \
+          -drive file=%h/qemu/%i/%i.img,cache=none,if=virtio \
+          -drive file=fat:%h/qemu/%i/config,file.label=cidata,cache=none,if=virtio
+#          -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
+#          -drive if=pflash,format=raw,file=%h/qemu/%i/OVMF_VARS.fd
 ExecStop=/usr/bin/env kill $MAINPID
 TimeoutStopSec=30
 KillMode=none
