@@ -113,7 +113,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'scrooloose/nerdtree', { 'on':  ['NERDTreeToggle', 'NERDTreeFind'] }
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'Townk/vim-autoclose'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
