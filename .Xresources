@@ -9,8 +9,24 @@ UXTerm*locale: true
 UXTerm*saveLines: 50000
 
 UXTerm*termName: xterm-256color
-UXTerm*background: grey5
-UXTerm*foreground: white
+UXTerm*.foreground: #BCBCBC
+UXTerm*.background: #262626
+UXTerm*.color0:     #1C1C1C
+UXTerm*.color8:     #444444
+UXTerm*.color1:     #AF5F5F
+UXTerm*.color9:     #FF8700
+UXTerm*.color2:     #5F875F
+UXTerm*.color10:    #87AF87
+UXTerm*.color3:     #87875F
+UXTerm*.color11:    #FFFFAF
+UXTerm*.color4:     #5F87AF
+UXTerm*.color12:    #8FAFD7
+UXTerm*.color5:     #5F5F87
+UXTerm*.color13:    #8787AF
+UXTerm*.color6:     #5F8787
+UXTerm*.color14:    #5FAFAF
+UXTerm*.color7:     #6C6C6C
+UXTerm*.color15:    #FFFFFF
 
 UXTerm*scrollTtyOutput: false
 UXTerm*scrollKey: true
@@ -18,7 +34,7 @@ UXTerm*alternateScroll: true
 
 UXTerm*renderFont: true
 UXTerm*faceName: DejaVu Sans Mono
-UXTerm*faceSize: 12
+UXTerm*faceSize: 11
 
 UXTerm*VT100.translations: #override \
     Ctrl <Key> +: larger-vt-font() \n\

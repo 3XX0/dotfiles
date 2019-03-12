@@ -117,13 +117,19 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
+Plug 'romainl/apprentice'
 Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
-Plug 'nanotech/jellybeans.vim'
 Plug 'vim-scripts/clibs.vim'
 call plug#end()
 
-colorscheme jellybeans " color scheme
-set background=dark    " adapt colors for background
+function! MyHighlights() abort
+    highlight Normal ctermbg=234
+endfunction
+augroup MyColors
+    autocmd!
+    autocmd ColorScheme * call MyHighlights()
+augroup END
+colorscheme apprentice " color scheme
 
 " Extra whitespaces
 au ColorScheme * highlight ExtraWhitespace
