@@ -62,9 +62,6 @@ nnoremap ,s :set invspell spell?<CR>
 " Turn off hightlighted search
 nnoremap ,h :silent noh<CR>
 
-" Open the shell
-nnoremap ,t :shell<CR>
-
 " Enable / Disable line numbering
 nnoremap ,l :set invnumber nonu?<CR>
 
@@ -74,6 +71,9 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 " Ctags definition in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+" Open the shell
+nnoremap <C-@> :vert term<CR>
+
 " Fast window resizing
 nmap <S-Down> :res +5<CR>
 nmap <S-Up> :res -5<CR>
@@ -82,6 +82,8 @@ nmap <S-Right> <C-W>5>
 
 nmap <Space> <PageDown>
 cmap tb tabnew
+nmap <C-l> :tabnext<CR>
+nmap <C-h> :tabprev<CR>
 
 " Quick fix mappings
 nmap [q :cp<CR>
@@ -115,7 +117,6 @@ Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-abolish'
 Plug 'romainl/apprentice'
 Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
@@ -156,21 +157,6 @@ let NERDTreeQuitOnOpen=1          " quit on opening files from the tree
 let NERDTreeHighlightCursorline=1 " highlight the selected entry in the tree
 let NERDTreeMouseMode=2           " use a single click to fold/unfold directories and a double click to open files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$', '\.o$', '\.so$', '\.egg$', '^\.git$', '\.swp$' ] " don't display these kinds of files
-
-" Airline
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-	let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.linenr = ''
-let g:airline_symbols.readonly = '[RO]'
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " Glibc functions
 let c_hi_identifiers = 'all'

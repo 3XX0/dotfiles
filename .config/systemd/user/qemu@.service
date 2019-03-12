@@ -9,7 +9,6 @@ ExecStart=/usr/bin/qemu-system-x86_64 \
           -enable-kvm \
           -snapshot \
           -nodefaults \
-          -nodefconfig \
           -serial mon:unix:%t/qemu-%i.socket,server,nowait \
           -nographic \
           -machine q35,accel=kvm,dump-guest-core=off \
