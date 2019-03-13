@@ -29,6 +29,8 @@ alias sv='sudoedit'
 alias v='vim'
 alias o='xdg-open'
 alias gr='grep -snIR --color=always'
+alias t='tig'
+alias ta='tig --all'
 
 alias lpkg='comm -23 <(pacman -Qqe | sort -u) <(pacman -Qqg base -g base-devel | sort -u)'
 alias cpkg='sudo sh -c "pacman -Qtdq | xargs -r pacman --noconfirm -Rns && pacman -Sc"'
