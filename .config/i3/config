@@ -158,6 +158,10 @@ bar {
 bindsym $mod+grave exec "i3lock -c 000000"
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 20"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 20"
-bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 0 +5%"
-bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 0 -5%"
-bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-volume 2 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-volume 2 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 2 toggle"
+
+exec --no-startup-id nm-applet
+exec --no-startup-id touchegg
+exec --no-startup-id systemctl --user start battery-status.timer

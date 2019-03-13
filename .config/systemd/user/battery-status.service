@@ -1,0 +1,7 @@
+[Unit]
+Description=Check the battery status
+
+[Service]
+Type=oneshot
+Environment="DISPLAY=:0.0"
+ExecStart=/usr/bin/sh ${HOME}/.config/systemd/user/battery-status.sh
