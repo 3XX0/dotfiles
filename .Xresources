@@ -10,7 +10,7 @@ UXTerm*saveLines: 50000
 
 UXTerm*termName: xterm-256color
 UXTerm*.foreground: #BCBCBC
-UXTerm*.background: #262626
+UXTerm*.background: #1C1C1C
 UXTerm*.color0:     #1C1C1C
 UXTerm*.color8:     #444444
 UXTerm*.color1:     #AF5F5F
