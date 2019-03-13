@@ -22,4 +22,4 @@ for file in $FILES; do
     ln -Tvfns "$CWD/$file" "$HOME/$file"
 done
 
-vim -c ":PlugInstall"
+vim -c ":PlugInstall" -c ":PlugClean" -c ":qa"
