@@ -89,6 +89,12 @@ nmap <C-h> :tabprev<CR>
 nmap [q :cp<CR>
 nmap ]q :cn<CR>
 
+" Grep under the cursor
+nnoremap gr :silent grep! -srnw --binary-files=without-match --exclude-dir=.git <cword> *<CR>:redr!<CR>:cw<CR>
+nnoremap Gr :silent grep! -srn --binary-files=without-match --exclude-dir=.git <cword> *<CR>:redr!<CR>:cw<CR>
+nnoremap gR :silent grep! -srnw --binary-files=without-match --exclude-dir=.git <cword> %:p:h/*<CR>:redr!<CR>:cw<CR>
+nnoremap GR :silent grep! -srnw --binary-files=without-match --exclude-dir=.git <cword> %:p:h/*<CR>:redr!<CR>:cw<CR>
+
 " Restore cursor position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
