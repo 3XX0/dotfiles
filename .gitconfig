@@ -9,6 +9,8 @@
     log = true
 [push]
     default = upstream
+[rebase]
+    autoStash = true
 [alias]
     lg = log --pretty=oneline -n 20 --graph --abbrev-commit
     st = status -s
