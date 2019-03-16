@@ -80,8 +80,10 @@ nmap <S-Up> :res -5<CR>
 nmap <S-Left> <C-W>5<
 nmap <S-Right> <C-W>5>
 
+cnoremap tb tabnew
+cnoremap su w !sudo tee %
+
 nmap <Space> <PageDown>
-cmap tb tabnew
 nmap <C-l> :tabnext<CR>
 nmap <C-h> :tabprev<CR>
 
@@ -143,7 +145,7 @@ au ColorScheme * highlight ExtraWhitespace
 au BufEnter    * match     ExtraWhitespace /\s\+$/
 au InsertEnter * match     ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match     ExtraWhiteSpace /\s\+$/
-highlight ExtraWhitespace ctermbg=red
+highlight ExtraWhitespace ctermbg=131
 
 " GitGlutter
 highlight SignColumn ctermbg=none
