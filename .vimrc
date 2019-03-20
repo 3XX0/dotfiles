@@ -52,6 +52,11 @@ set foldmethod=syntax
 set foldcolumn=0
 set foldenable
 
+noremap <Up> <nop>
+noremap <Down> <nop>
+noremap <Left> <nop>
+noremap <Right> <nop>
+
 " Enable / Disable the paste mode
 nnoremap ,p :set invpaste paste?<CR>
 set pastetoggle=,p
