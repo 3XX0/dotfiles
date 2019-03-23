@@ -47,6 +47,11 @@ set list listchars=tab:→\ ,trail:.
 set nobackup          " do not keep a backup file, use versionning instead
 set showmode
 
+" Set cursor modes
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"
+
 " Fold settings
 set foldmethod=syntax
 set foldcolumn=0
@@ -181,4 +186,3 @@ augroup clang-inspect-type-mapping
     autocmd!
     autocmd FileType cpp nmap <C-i> <Plug>(clang-inspect-type-at-cursor)
 augroup END
-
