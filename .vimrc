@@ -57,10 +57,12 @@ set foldmethod=syntax
 set foldcolumn=0
 set foldenable
 
+" Fixups
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+nnoremap Y y$
 
 " Enable / Disable the paste mode
 nnoremap ,p :set invpaste paste?<CR>
@@ -119,6 +121,7 @@ au FileType c       setl sw=8 ts=8 sts=4
 au FileType cpp     setl sw=4 ts=4 sts=2
 au FileType sh      let g:sh_fold_enabled=5
 au FileType sh      let g:is_bash=1
+au FileType sh      set foldmethod=indent
 
 " Avoid boost autocompletion
 set include=^\\s*#\\s*include\ \\(<boost/\\)\\@!

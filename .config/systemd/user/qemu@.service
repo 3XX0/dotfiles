@@ -17,8 +17,10 @@ ExecStart=/usr/bin/qemu-system-x86_64 \
           -m 8G \
           -realtime mlock=off \
           -device pcie-root-port,id=root.0,chassis=0,slot=0 \
-          -netdev user,id=network0 \
           -device virtio-net-pci,romfile=,netdev=network0 \
+          -device virtio-9p-pci,mount_tag=v9fs,fsdev=mount0 \
+          -netdev user,id=network0 \
+          -fsdev local,id=mount0,path=/mnt/qemu,security_model=none \
           -drive file=%h/qemu/%i/%i.img,cache=none,if=virtio \
           -drive file=fat:%h/qemu/%i/config,file.label=cidata,cache=none,if=virtio
 #          -drive if=pflash,format=raw,readonly,file=/usr/share/ovmf/x64/OVMF_CODE.fd \
