@@ -36,6 +36,8 @@ alias pss='ps -f -o pid,ppid,pgid,tty,stat,comm'
 alias pst='ps -f -o pid,ppid,pgid,tty,stat,command -x'
 alias psa='ps --ppid 2 -p 2 --deselect -f -o user,pid,ppid,pgid,tty,stat,command'
 
+tmp() { cd $(mktemp --tmpdir -d ${1:-scratch}.XXX); }
+
 alias lpkg='comm -23 <(pacman -Qqe | sort -u) <(pacman -Qqg base -g base-devel | sort -u)'
 alias cpkg='sudo sh -c "pacman -Qtdq | xargs -r pacman --noconfirm -Rns && pacman -Sc"'
 
