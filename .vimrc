@@ -142,6 +142,7 @@ Plug 'tpope/vim-abolish'
 Plug 'romainl/apprentice'
 Plug 'libclang-vim/clang-type-inspector.vim' | Plug 'rhysd/libclang-vim', { 'for': ['cpp'] }
 Plug 'vim-scripts/clibs.vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 function! MyHighlights() abort
@@ -189,3 +190,6 @@ augroup clang-inspect-type-mapping
     autocmd!
     autocmd FileType cpp nmap <C-i> <Plug>(clang-inspect-type-at-cursor)
 augroup END
+
+" Rust
+let g:rustfmt_autosave = 1

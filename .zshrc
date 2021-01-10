@@ -6,6 +6,9 @@ zstyle :compinstall filename '/home/exxo/.zshrc'
 autoload -Uz compinit
 compinit
 
+autoload bashcompinit
+bashcompinit
+
 HISTFILE=~/.histfile
 HISTSIZE=5000
 SAVEHIST=5000
@@ -43,6 +46,8 @@ alias cpkg='sudo sh -c "pacman -Qtdq | xargs -r pacman --noconfirm -Rns && pacma
 
 qemu-start() { systemctl --user start qemu@$1; }
 qemu-connect() { stty raw -echo && nc -U "$XDG_RUNTIME_DIR/qemu-$1.socket"; stty sane; }
+
+source "$HOME/.cargo/env"
 
 case $TERM in
     xterm*)
